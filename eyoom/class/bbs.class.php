@@ -1189,7 +1189,11 @@ class bbs extends eyoom
             $style = isset($m[1]) ? $m[1] : '';
             preg_match("/width:\s*(\d+)px/", $style, $m);
             $width = isset($m[1]) ? $m[1] : '';
+            preg_match("/width=[\"\'](\d+)[\"\']/", $img, $m);
+            $width = isset($m[1]) ? $m[1] : '';
             preg_match("/height:\s*(\d+)px/", $style, $m);
+            $height = isset($m[1]) ? $m[1] : '';
+            preg_match("/height=[\"\'](\d+)[\"\']/", $img, $m);
             $height = isset($m[1]) ? $m[1] : '';
             preg_match("/alt=[\"\']?([^\"\']*)[\"\']?/", $img, $m);
             $alt = isset($m[1]) ? get_text($m[1]) : '';
